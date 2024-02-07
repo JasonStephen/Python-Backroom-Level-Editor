@@ -1,0 +1,38 @@
+[
+    {
+        "floornum": "Level 0",
+        "floorname": "\u6559\u5b66\u5173\u5361",
+        "difficulties": "1",
+        "floortype": "\u5c42\u7ea7",
+        "floorlink": "http://backrooms-wiki-cn.wikidot.com/level-0",
+        "floorentrance": "\u524d\u5ba4,Level 283",
+        "floorexit": "Level 1"
+    },
+    {
+        "floornum": "Level 1",
+        "floorname": "\u5b9c\u5c45\u5730\u5e26",
+        "difficulties": "1",
+        "floortype": "\u5c42\u7ea7",
+        "floorlink": "http://backrooms-wiki-cn.wikidot.com/level-1",
+        "floorentrance": "Level 0,Level 11.1,Level 92,Level 94",
+        "floorexit": "Level 2,Level 19"
+    },
+    {
+        "floornum": "Level 2",
+        "floorname": "\u5e9f\u5f03\u516c\u5171\u5e26",
+        "difficulties": "3",
+        "floortype": "\u5c42\u7ea7",
+        "floorlink": "http://backrooms-wiki-cn.wikidot.com/level-2",
+        "floorentrance": "\u524d\u5ba4,Level 1,Level 0,Level -4.1,Level -1,\u529e\u516c\u533aEL3A,Level 2.2,Level 8,Level 11,Level 43,Level 84,Level 127,Level 141,Level 158,Level 309,Level 480,Level 522,Level 997",
+        "floorexit": "Level 1,Level 3,Level 4,Level 31,Level 127,Level 137,Level 70,Level 283,Level 101,Level 126,Level 141,Level 175,Level 997,Level 811,Level 998,\u67a2\u7ebd,\u529e\u516c\u533aEL3A,\u4f2a\u5c42\u7ea7,Level 38,Level 64,Level 158,Level 902,Level 189"
+    },
+    {
+        "floornum": "Level 3",
+        "floorname": "\u53d1\u7535\u7ad9",
+        "difficulties": "4",
+        "floortype": "\u5c42\u7ea7",
+        "floorlink": "http://backrooms-wiki-cn.wikidot.com/level-3",
+        "floorentrance": "Level 2,Level 4,Level 5,Level 10,Level 11,Level 13,\u5730\u94c1",
+        "floorexit": "Level 4,Level 5,Level 31,Level 69"
+    }
+]
