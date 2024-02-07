@@ -34,5 +34,14 @@
         "floorlink": "http://backrooms-wiki-cn.wikidot.com/level-3",
         "floorentrance": "Level 2,Level 4,Level 5,Level 10,Level 11,Level 13,\u5730\u94c1",
         "floorexit": "Level 4,Level 5,Level 31,Level 69"
+    },
+    {
+        "floornum": "Level 4",
+        "floorname": "\u5e9f\u5f03\u529e\u516c\u5ba4",
+        "difficulties": "1",
+        "floortype": "\u5c42\u7ea7",
+        "floorlink": "http://backrooms-wiki-cn.wikidot.com/level-4",
+        "floorentrance": "\u67a2\u7ebd,Level 2,Level 3,Level 283",
+        "floorexit": "Level 5,Level 6,Level 3"
     }
 ]

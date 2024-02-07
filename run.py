@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import Listbox, END
+from natsort import natsorted
 import json
 
 # JSON后端部分的代码
@@ -53,6 +54,21 @@ def create_treeview(root, data):
 # ----------------------------------------------------------------------------- #
 # ----------------------------------------------------------------------------- #
 
+def sort_listbox(listbox):
+    # 获取 Listbox 的所有内容和颜色
+    listbox_items = [(listbox.get(i), listbox.itemcget(i, 'fg')) for i in range(listbox.size())]
+
+    # 对内容进行自然排序
+    sorted_items = natsorted(listbox_items, key=lambda x: x[0])
+
+    # 清空 Listbox
+    listbox.delete(0, tk.END)
+
+    # 将排序后的内容插入到 Listbox 中，并设置颜色
+    for item, color in sorted_items:
+        listbox.insert(tk.END, item)
+        listbox.itemconfig(tk.END, {'fg': color})
+
 def populate_listbox1(event, tree, listbox):
     listbox.delete(0, END)  # 清空 listbox 中的所有条目
     # 获取选中的 floornum
@@ -75,6 +91,8 @@ def populate_listbox1(event, tree, listbox):
             if selected_floornum in exits and item['floornum'] not in listbox.get(0, END):
                 listbox.insert(END, item['floornum'])
                 listbox.itemconfig(END, {'fg': 'orange'})
+        
+        sort_listbox(listbox)
 
 def populate_listbox2(event, tree, listbox):
     listbox.delete(0, END)  # 清空 listbox 中的所有条目
@@ -98,6 +116,8 @@ def populate_listbox2(event, tree, listbox):
             if selected_floornum in entrances and item['floornum'] not in listbox.get(0, END):
                 listbox.insert(END, item['floornum'])
                 listbox.itemconfig(END, {'fg': 'orange'})
+
+        sort_listbox(listbox)
 
 # ----------------------------------------------------------------------------- #
 # ----------------------------------------------------------------------------- #
