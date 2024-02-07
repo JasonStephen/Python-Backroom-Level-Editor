@@ -211,6 +211,8 @@ def add_level():
             data.append({"floornum": floornum, "floorname": floorname, "difficulties": difficulties, "floortype": floortype, "floorlink": floorlink, "floorentrance": floorentrance, "floorexit": floorexit})
         save_data_to_json(data)
         create_treeview(VLevels, data)
+        VEULL.delete(0, END)
+        VEURL.delete(0, END)
 
 # 清空输入框
 def clear_entry():
