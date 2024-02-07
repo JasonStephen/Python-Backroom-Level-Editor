@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import Listbox, END
 from natsort import natsorted
+import webbrowser
 import json
 
 # JSON后端部分的代码
@@ -47,7 +48,10 @@ def create_treeview(root, data):
         populate_tree(tree, type_node, floors)
 
     # 在创建 Treeview 时绑定双击事件
-    tree.bind('<Double-1>', lambda event: (populate_listbox1(event, tree, VEULL), populate_listbox2(event, tree, VEURL), on_double_click_level(event, tree)))
+    tree.bind('<Double-1>', lambda event: (populate_listbox1(event, tree, VEULL),
+                                            populate_listbox2(event, tree, VEURL),
+                                            on_double_click_level(event, tree),
+                                            ))
 
     tree.place(width=256,height=400,x=0,y=64)
 
@@ -190,6 +194,21 @@ def on_double_click_level(event, tree):
                 floorexit_var.set(item['floorexit'])
                 break
 
+# 未经过测验的代码
+# 将列表选中楼层显示在输入框中
+def on_double_click_level_list(event, listbox):
+    floornum = listbox.get(listbox.curselection())
+    for item in data:
+        if item['floornum'] == floornum:
+            floornum_var.set(item['floornum'])
+            floorname_var.set(item['floorname'])
+            difficulties_var.set(item['difficulties'])
+            floortype_var.set(item['floortype'])
+            floorlink_var.set(item['floorlink'])
+            floorentrance_var.set(item['floorentrance'])
+            floorexit_var.set(item['floorexit'])
+            break
+
 # 添加楼层
 def add_level():
     floornum = floornum_var.get()
@@ -225,6 +244,12 @@ def clear_entry():
     floorexit_var.set('')
     VEULL.delete(0, END)
     VEURL.delete(0, END)
+
+# 访问网址
+def open_url():
+    link = floorlink_var.get()
+    if link:
+        webbrowser.open(link)
 
 # ----------------------------------------------------------------------------- #
 # ----------------------------------------------------------------------------- #
@@ -336,6 +361,8 @@ VEURL.place(x=0, y=48)
 
 VEM = tk.Frame(VEright, width=360, height=64, bg='#313338')
 VEM.place(x=0, y=256)
+VEMLINK = tk.Button(VEM, text='访问链接', font=('微软雅黑', 12, 'bold'), command=open_url)
+VEMLINK.place(x=16, y=16)
 
 VLM = tk.Frame(VEright, width=360, height=64, bg='#313338')
 VLM.place(x=0, y=320)
